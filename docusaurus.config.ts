@@ -5,17 +5,23 @@ import { siteInfo } from './data/site'
 import type { GiscusConfig } from './src/components/Comment'
 
 const config: Config = {
-  title: '愧怍',
+  title: 'Aris_QwQ',
   url: siteInfo.url,
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'kuizuo',
-  projectName: 'blog',
+  organizationName: 'Aris_QwQ',
+  projectName: "Aris_QwQ's blog page",
   customFields: {
     bio: 'born to differ.', // die to survive.
-    description: '是一个由愧怍创建的个人博客，主要分享编程开发知识和项目，该网站基于 React 驱动的静态网站生成器 Docusaurus 构建。',
+    description: '是Aris_QwQ創建的個人博客，什麼都會發一點點',
   },
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      // 首次访问跟随系统/浏览器 prefers-color-scheme；访客手动切换后按 localStorage 记忆
+      respectPrefersColorScheme: true,
+    },
     // announcementBar: {
     //   id: 'announcementBar-3',
     //   content: ``,
@@ -24,7 +30,7 @@ const config: Config = {
     metadata: [
       {
         name: 'author',
-        content: '愧怍',
+        content: 'Aris',
       },
       {
         name: 'keywords',
@@ -32,48 +38,39 @@ const config: Config = {
       },
       {
         name: 'keywords',
-        content: '编程爱好者, Web开发者, 写过爬虫, 学过逆向, 主攻ts全栈',
+        content: '編程愛好者',
       },
     ],
     navbar: {
       logo: {
-        alt: '愧怍',
+        alt: 'Aris',
         src: 'img/logo.webp',
         srcDark: 'img/logo.webp',
       },
       hideOnScroll: true,
       items: [
         { label: '博客', position: 'right', to: 'blog' },
-        { label: '项目', position: 'right', to: 'project' },
-        { label: '友链', position: 'right', to: 'friends' },
-        { label: '关于', position: 'right', to: 'about' },
-        {
-          label: '更多',
-          position: 'right',
-          items: [
-            { label: '归档', to: 'blog/archive' },
-            { label: '手指极限', to: 'videos' },
-            { label: '主题魔改', to: 'docs/docusaurus-guides' },
-          ],
-        },
+        // { label: '項目', position: 'right', to: 'project' },
+        { label: '友鏈', position: 'right', to: 'friends' },
+        { label: '關於', position: 'right', to: 'about' },
         // {
-        //   type: 'localeDropdown',
+        //   label: '更多',
         //   position: 'right',
+        //   items: [
+        //     { label: '歸檔', to: 'blog/archive' },
+        //     { label: '手指極限', to: 'videos' },
+        //     { label: '主題魔改', to: 'docs/docusaurus-guides' },
+        //   ],
         // },
       ],
     },
     footer: {
       style: 'dark',
     },
-    docs: {
-      sidebar: {
-        hideable: true,
-      },
-    },
     algolia: {
       appId: 'GV6YN1ODMO',
       apiKey: '50303937b0e4630bec4a20a14e3b7872',
-      indexName: 'kuizuo',
+      indexName: 'Aris_QwQ',
     },
     prism: {
       theme: themes.oneLight,
@@ -117,10 +114,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          path: 'docs',
-          sidebarPath: 'sidebars.ts',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: ['./src/css/custom.css', './src/css/tweet-theme.css'],
@@ -146,7 +140,7 @@ const config: Config = {
         debug: process.env.NODE_ENV === 'development',
         offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          { tagName: 'link', rel: 'icon', href: '/img/logo.png' },
+          { tagName: 'link', rel: 'icon', href: '/img/favicon.png' },
           { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
           { tagName: 'meta', name: 'theme-color', content: '#12affa' },
         ],
@@ -160,24 +154,25 @@ const config: Config = {
       },
     ],
     [
-      './src/plugin/plugin-content-blog', // 为了实现全局 blog 数据，必须改写 plugin-content-blog 插件
+      './src/plugin/plugin-content-blog', // 為了實現全局 blog 數據，必須改寫 plugin-content-blog 插件
       {
         path: 'blog',
-        editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
+        // 倉庫建好後再打開：把地址換成你自己的倉庫，文章底部就會出現「編輯此頁」連結
+        // editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
+        //   `https://github.com/ArisQwQ/blog/edit/main/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
-        blogDescription: '代码人生：编织技术与生活的博客之旅',
+        blogDescription: '代碼人生：編織技術與生活的博客之旅',
         blogSidebarCount: 12,
-        blogSidebarTitle: '历史博文',
+        blogSidebarTitle: '歷史博文',
         postsPerPage: 18,
         showReadingTime: true,
         readingTime: ({ content, frontMatter, defaultReadingTime }) =>
           defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         feedOptions: {
           type: 'all',
-          title: '愧怍',
+          title: 'Aris_QwQ',
           description: 'feedId:41215011978385457+userId:41840354283324416',
-          copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${siteInfo.beian.icp}</a></p>`,
+        //   copyright: `Copyright © ${new Date().getFullYear()} Aris_QwQ Built with Docusaurus.<p></p>`,
         },
       },
     ],
@@ -201,13 +196,13 @@ const config: Config = {
                 innerHTML: `
     (${function () {
       console.log(
-        `%c Kz Blog %c https://github.com/kuizuo/blog`,
+        `%c Aris Blog %c https://github.com/ArisQwQ`,
         'color: #fff; margin: 1em 0; padding: 5px 0; background: #12affa;',
         'margin: 1em 0; padding: 5px 0; background: #efefef;',
       )
 
       const motto = `
-This Webisite Powered By Kz Blog.
+This Website Powered By Aris Blog.
 Written by Docusaurus, Coding with Love.
 --------
 Love what you do and do what you love.
@@ -229,7 +224,7 @@ Love what you do and do what you love.
       tagName: 'meta',
       attributes: {
         name: 'description',
-        content: '愧怍的个人博客',
+        content: 'Aris_QwQ的個人博客',
       },
     },
   ],
@@ -243,8 +238,8 @@ Love what you do and do what you love.
     'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Semibold.min.css',
   ],
   i18n: {
-    defaultLocale: 'zh-CN',
-    locales: ['zh-CN'],
+    defaultLocale: 'zh-TW',
+    locales: ['zh-TW'],
   },
   onBrokenLinks: 'warn',
   future: {

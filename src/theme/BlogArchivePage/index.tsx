@@ -58,12 +58,12 @@ function listPostsByYears(blogPosts: readonly ArchiveBlogPost[]): YearProps[] {
 export default function BlogArchive({ archive }: Props) {
   const title = translate({
     id: 'theme.blog.archive.title',
-    message: '历史博文',
+    message: '歷史博文',
     description: 'The page & hero title of the blog archive page',
   })
   const description = translate({
     id: 'theme.blog.archive.pageDescription',
-    message: '按年份整理的文章，记录开发实践与生活。',
+    message: '按年份整理的文章，記錄開發實踐與生活。',
     description: 'The page description of the blog archive page',
   })
   const years = listPostsByYears(archive.blogPosts)
@@ -78,19 +78,19 @@ export default function BlogArchive({ archive }: Props) {
                 <h1 className={collection.title}>{title}</h1>
                 <p className={collection.description}>
                   <Translate id="theme.blog.archive.posts.total" values={{ total: archive.blogPosts.length }}>
-                    {'共 {total} 篇文章，记录一路上的探索与生活。'}
+                    {'共 {total} 篇文章，記錄一路上的探索與生活。'}
                   </Translate>
                 </p>
               </div>
               <Link to="/blog" className={collection.textLink}>
-                <Translate id="theme.blog.archive.allPosts">浏览全部文章</Translate>
+                <Translate id="theme.blog.archive.allPosts">瀏覽全部文章</Translate>
                 <span aria-hidden="true">→</span>
               </Link>
             </header>
             {years.length > 0 && (
               <div className={styles.archive}>
-                <nav className={styles.yearNav} aria-label={translate({ id: 'theme.blog.archive.years', message: '按年份浏览' })}>
-                  <p className={styles.navLabel}><Translate id="theme.blog.archive.years">按年份浏览</Translate></p>
+                <nav className={styles.yearNav} aria-label={translate({ id: 'theme.blog.archive.years', message: '按年份瀏覽' })}>
+                  <p className={styles.navLabel}><Translate id="theme.blog.archive.years">按年份瀏覽</Translate></p>
                   <div className={styles.yearLinks}>
                     {years.map(({ year, posts }) => (
                       <Link

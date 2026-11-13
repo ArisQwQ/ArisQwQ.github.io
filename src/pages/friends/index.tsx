@@ -8,13 +8,13 @@ import Layout from '@theme/Layout'
 import { memo } from 'react'
 import styles from './styles.module.css'
 
-const TITLE = translate({ id: 'friends.title', message: '友链' })
-const DESCRIPTION = translate({ id: 'friends.description', message: '有很多良友，胜于有很多财富。' })
-const ADD_FRIEND_URL = 'https://github.com/kuizuo/blog/edit/main/data/friends.tsx'
-const SITE_INFO = `title: '愧怍'
-bio: '道阻且长，行则将至'
-website: 'https://kuizuo.me'
-avatar: 'https://kuizuo.me/img/logo.png'
+const TITLE = translate({ id: 'friends.title', message: '友鏈' })
+const DESCRIPTION = translate({ id: 'friends.description', message: '有很多良友，勝於有很多財富。' })
+const ADD_FRIEND_URL = 'https://github.com/ArisQwQ/blog/edit/main/data/friends.tsx'
+const SITE_INFO = `title: 'Aris_QwQ'
+bio: '事在人為'
+website: 'https://blog.tendou-aris.com'
+avatar: 'https://blog.tendou-aris.com/img/avatar.png'
 `
 
 function stableFriendOrder(friend: Friend): number {
@@ -70,7 +70,7 @@ export default function FriendLink(): JSX.Element {
               <p className={collection.description}>{DESCRIPTION}</p>
             </div>
             <Link href="#exchange" className={collection.textLink}>
-              <Translate id="friends.exchange">交换友链</Translate>
+              <Translate id="friends.exchange">交換友鏈</Translate>
               <span aria-hidden="true">↓</span>
             </Link>
           </header>
@@ -79,10 +79,10 @@ export default function FriendLink(): JSX.Element {
           </ul>
           <section id="exchange" className={styles.exchange} aria-labelledby="exchange-title">
             <div className={styles.exchangeIntro}>
-              <h2 id="exchange-title"><Translate id="friends.exchange">交换友链</Translate></h2>
-              <p><Translate id="friends.exchange.description">如果你也在记录生活、分享技术，欢迎交换友链。</Translate></p>
+              <h2 id="exchange-title"><Translate id="friends.exchange">交換友鏈</Translate></h2>
+              <p><Translate id="friends.exchange.description">如果你也在記錄生活、分享技術，歡迎交換友鏈。</Translate></p>
               <Link href={ADD_FRIEND_URL} className={collection.textLink}>
-                <Translate id="friends.add">在 GitHub 上添加友链</Translate>
+                <Translate id="friends.add">在 GitHub 上添加友鏈</Translate>
                 <span aria-hidden="true">↗</span>
               </Link>
             </div>

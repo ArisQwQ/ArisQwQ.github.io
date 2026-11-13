@@ -8,7 +8,7 @@ export default function ViewTypeSwitch({ viewType, toggleViewType }: {
 }) {
   return (
     <SegmentedControl
-      label={translate({ id: 'blog.view.label', message: '文章显示方式' })}
+      label={translate({ id: 'blog.view.label', message: '文章顯示方式' })}
       value={viewType}
       onChange={toggleViewType}
       controls="blog-posts"
@@ -24,7 +24,7 @@ export default function ViewTypeSwitch({ viewType, toggleViewType }: {
         },
         {
           value: 'grid',
-          label: <Translate id="blog.view.grid">网格</Translate>,
+          label: <Translate id="blog.view.grid">網格</Translate>,
           icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <rect x="3" y="3" width="7" height="7" rx="1.5" />

@@ -38,7 +38,7 @@ function buildContent({ slug, title, date, tags }) {
 slug: ${slug}
 title: ${title}
 date: ${date}
-authors: kuizuo
+authors: Aris_QwQ
 tags: [${tagText}]
 keywords: [${tagText}]
 ---

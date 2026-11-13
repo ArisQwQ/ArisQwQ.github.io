@@ -34,7 +34,7 @@ function TagLinks({ tags }: { tags: readonly TagItem[] }) {
             to={tag.permalink}
             className={styles.tagLink}
             title={tag.description}
-            aria-label={translate({ id: 'blog.tags.link', message: '查看「{tag}」的相关文章，共 {count} 篇' }, { tag: tag.label, count: tag.count })}
+            aria-label={translate({ id: 'blog.tags.link', message: '查看「{tag}」的相關文章，共 {count} 篇' }, { tag: tag.label, count: tag.count })}
           >
             <span>{tag.label}</span>
             <span className={styles.tagCount} aria-hidden="true">{tag.count}</span>
@@ -47,7 +47,7 @@ function TagLinks({ tags }: { tags: readonly TagItem[] }) {
 
 export default function BlogTagsListPage({ tags }: Props): JSX.Element {
   const title = translateTagsPageTitle()
-  const description = translate({ id: 'blog.tags.description', message: '从一个关键词，找到感兴趣的内容。' })
+  const description = translate({ id: 'blog.tags.description', message: '從一個關鍵詞，找到感興趣的內容。' })
   const [view, setView] = useState<TagView>('all')
   const [query, setQuery] = useState('')
   const search = useRef<HTMLInputElement>(null)
@@ -80,19 +80,19 @@ export default function BlogTagsListPage({ tags }: Props): JSX.Element {
             </header>
             <div className={styles.toolbar}>
               <div className={styles.search}>
-                <label className="sr-only" htmlFor="blog-tag-search"><Translate id="blog.tags.search">搜索标签</Translate></label>
-                <input ref={search} id="blog-tag-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder={translate({ id: 'blog.tags.search.placeholder', message: '输入标签名称…' })} aria-controls="blog-tags" />
+                <label className="sr-only" htmlFor="blog-tag-search"><Translate id="blog.tags.search">搜索標籤</Translate></label>
+                <input ref={search} id="blog-tag-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder={translate({ id: 'blog.tags.search.placeholder', message: '輸入標籤名稱…' })} aria-controls="blog-tags" />
               </div>
               <p className={styles.result} role="status">
-                <Translate id="blog.tags.count" values={{ count: filtered.length }}>{'{count} 个标签'}</Translate>
+                <Translate id="blog.tags.count" values={{ count: filtered.length }}>{'{count} 個標籤'}</Translate>
               </p>
               <SegmentedControl
-                label={translate({ id: 'blog.tags.view', message: '标签显示方式' })}
+                label={translate({ id: 'blog.tags.view', message: '標籤顯示方式' })}
                 value={view}
                 onChange={setView}
                 controls="blog-tags"
                 options={[
-                  { value: 'all', label: <Translate id="blog.tags.all">全部标签</Translate> },
+                  { value: 'all', label: <Translate id="blog.tags.all">全部標籤</Translate> },
                   { value: 'letters', label: <Translate id="blog.tags.letters">按字母</Translate> },
                 ]}
               />
@@ -101,7 +101,7 @@ export default function BlogTagsListPage({ tags }: Props): JSX.Element {
               {filtered.length === 0
                 ? (
                     <div className={styles.empty}>
-                      <h2><Translate id="blog.tags.empty">没有找到匹配的标签</Translate></h2>
+                      <h2><Translate id="blog.tags.empty">沒有找到匹配的標籤</Translate></h2>
                       <button
                         type="button"
                         onClick={() => {

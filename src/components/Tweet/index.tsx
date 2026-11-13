@@ -44,7 +44,7 @@ function TweetFallback({ id }: { id: string }) {
   return (
     <span className="flex justify-center">
       <a href={`https://x.com/i/web/status/${id}`} target="_blank" rel="noopener noreferrer">
-        查看这条推文
+        查看這條推文
       </a>
     </span>
   )

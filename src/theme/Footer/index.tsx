@@ -15,35 +15,29 @@ const currentYear = new Date().getFullYear()
 
 const linkGroups: Array<{ title: string, links: FooterLink[] }> = [
   {
-    title: '关于',
+    title: '關於',
     links: [
-      { label: '首页', to: '/' },
-      { label: '关于我', to: '/about' },
-      { label: '关于本站项目', href: siteInfo.repository },
+      { label: '首頁', to: '/' },
+      { label: '關於我', to: '/about' },
     ],
   },
   {
     title: '更多',
     links: [
-      { label: '项目', to: '/project' },
-      { label: '归档', to: '/blog/archive' },
-      { label: '友链', to: '/friends' },
+      { label: '歸檔', to: '/blog/archive' },
+      { label: '友鏈', to: '/friends' },
     ],
   },
   {
-    title: '联系',
+    title: '聯繫',
     links: [
       { label: 'GitHub', href: social.github.href },
-      { label: 'X', href: social.x.href },
-      { label: '发邮件', href: social.email.href },
+      { label: '發郵件', href: social.email.href },
     ],
   },
 ]
 
-const utilityLinks: FooterLink[] = [
-  { label: 'RSS 订阅', href: `${siteInfo.url}${social.rss.href}`, showExternalIcon: false },
-  { label: '站点地图', href: `${siteInfo.url}/sitemap.xml`, showExternalIcon: false },
-]
+const hasBeian = Boolean(siteInfo.beian.icp || siteInfo.beian.police)
 
 function FooterAnchor({ link }: { link: FooterLink }): JSX.Element {
   const showExternalIcon = link.showExternalIcon ?? Boolean(link.href?.startsWith('http'))
@@ -62,7 +56,7 @@ export default function Footer(): JSX.Element {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.top}>
-          <section className={styles.brand} aria-label="站点信息">
+          <section className={styles.brand} aria-label="站點信息">
             <h2 className={styles.title}>{siteInfo.name}</h2>
             <p className={styles.description}>{siteInfo.description}</p>
             <p className={styles.copyright}>
@@ -78,7 +72,7 @@ export default function Footer(): JSX.Element {
             </p>
           </section>
 
-          <nav className={styles.groups} aria-label="页脚导航">
+          <nav className={styles.groups} aria-label="頁腳導航">
             {linkGroups.map(group => (
               <section key={group.title} className={styles.group}>
                 <h3 className={styles.groupTitle}>{group.title}</h3>
@@ -94,21 +88,23 @@ export default function Footer(): JSX.Element {
           </nav>
         </div>
 
-        <div className={styles.bottom}>
-          <nav className={styles.utility} aria-label="订阅和站点地图">
-            {utilityLinks.map(link => (
-              <FooterAnchor key={link.label} link={link} />
-            ))}
-          </nav>
-
-          <div className={styles.records}>
-            <Link href="http://beian.miit.gov.cn/">{siteInfo.beian.icp}</Link>
-            <span className={styles.recordDivider} aria-hidden="true">·</span>
-            <Link href={`http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${getPoliceRecordCode()}`}>
-              {siteInfo.beian.police}
-            </Link>
+        {hasBeian && (
+          <div className={styles.bottom}>
+            <div className={styles.records}>
+              {siteInfo.beian.icp && (
+                <Link href="http://beian.miit.gov.cn/">{siteInfo.beian.icp}</Link>
+              )}
+              {siteInfo.beian.icp && siteInfo.beian.police && (
+                <span className={styles.recordDivider} aria-hidden="true">·</span>
+              )}
+              {siteInfo.beian.police && (
+                <Link href={`http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${getPoliceRecordCode()}`}>
+                  {siteInfo.beian.police}
+                </Link>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </footer>
   )

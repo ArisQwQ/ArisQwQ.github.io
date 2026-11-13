@@ -8,15 +8,11 @@ import { Icon } from '@iconify/react'
 import SocialLinks from '@site/src/components/SocialLinks'
 import { cn } from '@site/src/lib/utils'
 
-import { projects } from '@site/data/projects'
-
 import styles from './styles.module.css'
 
 type Count = {
   blog: number
   tag: number
-  doc: number
-  project: number
 }
 
 export default function UserCard({ isNavbar = false }: { isNavbar?: boolean }) {
@@ -36,17 +32,9 @@ export default function UserCard({ isNavbar = false }: { isNavbar?: boolean }) {
     postNum: number
     tagNum: number
   }
-  const docData = (
-    usePluginData('docusaurus-plugin-content-docs') as {
-      versions: { docs: BlogPost[] }
-    }
-  )?.versions[0].docs
-
   const count: Count = {
     blog: blogData.postNum,
     tag: blogData.tagNum ?? 0,
-    doc: docData?.length ?? 0,
-    project: projects?.length ?? 0,
   }
 
   return (
@@ -68,10 +56,6 @@ export default function UserCard({ isNavbar = false }: { isNavbar?: boolean }) {
         <Link className={styles.numItem} href="/blog/tags">
           <Icon icon="ri:price-tag-3-line" width="20" height="20" />
           {count.tag}
-        </Link>
-        <Link className={styles.numItem} href="/project" data-tips="project count">
-          <Icon icon="ph:projector-screen" width="20" height="20" />
-          {count.project}
         </Link>
       </div>
       <SocialLinks

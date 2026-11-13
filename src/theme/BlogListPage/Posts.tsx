@@ -27,7 +27,7 @@ function Post({ content, viewType }: { content: PropBlogPostContent, viewType: V
         <div className={styles.meta}>
           <time dateTime={date}>{date.slice(0, 10)}</time>
           {typeof readingTime === 'number' && <span><ReadingTime readingTime={readingTime} /></span>}
-          {Boolean(frontMatter.sticky) && <span className={styles.pinned}><Translate id="blog.post.pinned">置顶</Translate></span>}
+          {Boolean(frontMatter.sticky) && <span className={styles.pinned}><Translate id="blog.post.pinned">置頂</Translate></span>}
         </div>
         <h2 className={styles.title}>
           <Link to={permalink} className={styles.titleLink}>{title}</Link>

@@ -16,11 +16,11 @@ export function useWindowSize() {
 
     window.addEventListener('resize', handleResize)
 
-    // 清理函数，在组件卸载时移除事件监听
+    // 清理函數，在組件卸載時移除事件監聽
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, []) // 空数组作为第二个参数，只在组件挂载和卸载时执行一次
+  }, []) // 空數組作為第二個參數，只在組件掛載和卸載時執行一次
 
   return windowSize
 }

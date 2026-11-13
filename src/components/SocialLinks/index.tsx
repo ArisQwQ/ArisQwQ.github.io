@@ -38,7 +38,7 @@ export default function SocialLinks({ ...prop }) {
   return (
     <div className={styles.socialLinks} {...prop}>
       {Object.entries(social)
-        .filter(([_key, { href }]) => href)
+        .filter(([key, { href }]) => href && key !== 'rss')
         .map(([key, { href, icon, title, color }]) => {
           return <SocialLink key={key} href={href!} title={title} icon={icon} style={{ '--color': color }} />
         })}

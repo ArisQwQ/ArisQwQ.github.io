@@ -33,16 +33,15 @@ function Name() {
     >
       <Translate id="homepage.hero.greet">你好! 我是</Translate>
       <span className={styles.name}>
-        <Translate id="homepage.hero.name">愧怍</Translate>
+        <Translate id="homepage.hero.name"> Aris_QwQ</Translate>
       </span>
-      <span className="ml-1">👋</span>
     </motion.h1>
   )
 }
 
 export default function Hero() {
   const reduceMotion = useReducedMotion()
-  const avatar = useBaseUrl('/img/logo.png')
+  const avatar = useBaseUrl('/img/avatar.png')
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
@@ -51,7 +50,7 @@ export default function Hero() {
         <Name />
         <motion.p custom={2} initial={reduceMotion ? false : 'hidden'} animate="visible" variants={variants}>
           <Translate id="homepage.hero.text">
-            一个爱折腾的开发者，写代码，也记录生活。在这里分享开发实践、开源项目和一路上的所见所想。
+            一隻 OIer，但是沒有什麼出息。
           </Translate>
         </motion.p>
         <motion.div className={styles.socials} custom={3} initial={reduceMotion ? false : 'hidden'} animate="visible" variants={variants}>

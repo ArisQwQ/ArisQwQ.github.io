@@ -25,15 +25,15 @@ export default function BlogListPage({ metadata, items }: Props): JSX.Element {
             <header className={collection.header}>
               <div>
                 <h1 className={collection.title}>{title}</h1>
-                <p className={collection.description}><Translate id="blog.description">代码人生：编织技术与生活的博客之旅</Translate></p>
+                <p className={collection.description}><Translate id="blog.description">代碼人生：編織技術與生活的博客之旅</Translate></p>
               </div>
               <div className={styles.headerLinks}>
                 <Link to="/blog/tags" className={collection.textLink}>
-                  <Translate id="blog.tags.browse">按标签浏览</Translate>
+                  <Translate id="blog.tags.browse">按標籤瀏覽</Translate>
                   <span aria-hidden="true">→</span>
                 </Link>
                 <Link to="/blog/archive" className={collection.textLink}>
-                  <Translate id="blog.archive">按年份浏览</Translate>
+                  <Translate id="blog.archive">按年份瀏覽</Translate>
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -41,7 +41,7 @@ export default function BlogListPage({ metadata, items }: Props): JSX.Element {
             <div className={styles.toolbar}>
               <p className={styles.results}>
                 <Translate id="blog.count" values={{ count: metadata.totalCount }}>{'共 {count} 篇文章'}</Translate>
-                {metadata.totalPages > 1 && <span><Translate id="blog.page" values={{ page: metadata.page, total: metadata.totalPages }}>{'第 {page} / {total} 页'}</Translate></span>}
+                {metadata.totalPages > 1 && <span><Translate id="blog.page" values={{ page: metadata.page, total: metadata.totalPages }}>{'第 {page} / {total} 頁'}</Translate></span>}
               </p>
               <ViewTypeSwitch viewType={viewType} toggleViewType={toggleViewType} />
             </div>

@@ -4,7 +4,7 @@
 
 ## 项目概览
 
-这是愧怍的个人博客项目，基于 Docusaurus 3、React、TypeScript 和 TailwindCSS 构建，主要内容是博客文章、Docusaurus 主题魔改文档、项目展示、友链和个人资料页。
+这是 Aris_QwQ 的个人博客项目，基于 Docusaurus 3、React、TypeScript 和 TailwindCSS 构建，主要内容是博客文章、友链和个人资料页。
 
 主要目录：
 
@@ -18,7 +18,6 @@
 - `src/css/`：全局样式和主题样式。
 - `static/`：静态资源，图片路径通常以 `/img/...`、`/svg/...` 方式引用。
 - `i18n/`：翻译资源。当前站点配置默认语言是 `zh-CN`。
-- `skill/kuizuo/`：本地 Codex Skill 资料，不是站点常规业务代码；只有明确要求时再修改。
 
 不要编辑 `node_modules/`、`.docusaurus/`、`build/` 这类依赖或生成产物。
 

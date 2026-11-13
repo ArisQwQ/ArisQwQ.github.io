@@ -48,7 +48,7 @@ export default function BlogSection(): JSX.Element {
   const posts = chunk(blogData.posts.slice(0, BLOG_POSTS_COUNT), BLOG_POSTS_PER_ROW)
 
   if (blogData.postNum === 0) {
-    return <>作者还没开始写博文哦...</>
+    return <>作者還沒開始寫博文哦...</>
   }
 
   return (
