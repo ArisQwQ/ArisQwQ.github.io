@@ -10,7 +10,7 @@ const config: Config = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'Aris_QwQ',
-  projectName: "Aris_QwQ's blog page",
+  projectName: 'Aris_QwQ\'s blog page',
   customFields: {
     bio: 'born to differ.', // die to survive.
     description: '是Aris_QwQ創建的個人博客，什麼都會發一點點',

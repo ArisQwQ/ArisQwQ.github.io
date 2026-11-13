@@ -38,7 +38,8 @@ export default function ColorModeToggle({
         onClick={() => onChange?.(value === 'dark' ? 'light' : 'dark')}
         disabled={!isBrowser}
         title={label}
-        aria-label={label}>
+        aria-label={label}
+      >
         <IconLightMode aria-hidden="true" className={clsx(styles.toggleIcon, styles.sunIcon)} />
         <IconDarkMode aria-hidden="true" className={clsx(styles.toggleIcon, styles.moonIcon)} />
       </button>
