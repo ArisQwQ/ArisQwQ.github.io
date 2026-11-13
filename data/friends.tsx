@@ -6,6 +6,12 @@ export const Friends: Friend[] = [
     avatar: '/img/friend/FengLiMeng.jpg',
   },
   {
+    title: 'Erialys',
+    description: '一隻可愛小貓娘喵',
+    website: 'https://www.luogu.com.cn/user/1201743',
+    avatar: '/img/friend/Eiralys.png',
+  },
+  {
     title: '愧怍',
     description: '小站模板的作者',
     website: 'https://kuizuo.me/',
