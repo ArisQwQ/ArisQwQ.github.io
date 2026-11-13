@@ -9,7 +9,7 @@ export const Friends: Friend[] = [
     title: 'Erialys',
     description: '一隻可愛小貓娘喵',
     website: 'https://www.luogu.com.cn/user/1201743',
-    avatar: '/img/friend/Eiralys.png',
+    avatar: '/img/friend/Eiralys.jpg',
   },
   {
     title: '愧怍',
