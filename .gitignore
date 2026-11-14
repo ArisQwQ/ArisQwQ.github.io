@@ -27,3 +27,8 @@ pnpm-error.log*
 
 .obsidian
 .playwright-mcp
+
+# 本地临时文件与私人笔记
+.Trash-0/
+.workbuddy/
+_tmp_*
