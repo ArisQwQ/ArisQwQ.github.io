@@ -233,9 +233,10 @@ Love what you do and do what you love.
     namespace: true,
   },
   stylesheets: [
-    'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Normal.min.css',
-    'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Medium.min.css',
-    'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Semibold.min.css',
+    // MiSans TC：繁體中文版（漢儀製作），官方授權免費商用；
+    // 套件已按 unicode-range 切成 60+ 片段，只下載頁面實際用到的字。
+    // 可變字重 150–700，一條 CSS 涵蓋全部字重，缺字回退系統字體。
+    'https://cdn.jsdelivr.net/npm/misans@5.0.0/lib/TC/MiSansTCVF.min.css',
   ],
   i18n: {
     defaultLocale: 'zh-TW',

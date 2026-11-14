@@ -18,9 +18,15 @@
     --ifm-color-primary-lighter: #b0e6ff;
     --ifm-color-primary-lightest: #d5f1fd;
     --ifm-code-font-size: 95%;
-    --ifm-font-family-base: misans, ui-sans-serif, system-ui, -apple-system;
 
-    --ifm-heading-font-family: ui-sans-serif, system-ui, -apple-system;
+    /* MiSans TC：繁體中文版（漢儀製作），可變字重 150–700，缺字才回退系統字體 */
+    --site-font-family: 'MiSansTC VF', 'MiSans TC', 'PingFang TC',
+      'Microsoft JhengHei', 'Noto Sans TC', system-ui, -apple-system,
+      sans-serif;
+
+    --ifm-font-family-base: var(--site-font-family);
+
+    --ifm-heading-font-family: var(--site-font-family);
 
     --ifm-navbar-background-color: white;
     --ifm-navbar-shadow: 0 4px 28px rgb(0 0 0 / 10%);
@@ -105,8 +111,7 @@ body {
 }
 
 body {
-  font-family: misans, system-ui, -apple-system, 'PingFang SC',
-    'Microsoft YaHei';
+  font-family: var(--site-font-family);
 }
 
 html.blog-post-page,

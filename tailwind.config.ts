@@ -15,7 +15,15 @@ const twConfig = {
         border: 'var(--ifm-border-color)',
       },
       fontFamily: {
-        misans: ['misans'],
+        // 保留 font-misans 類名，實際字體為 MiSans TC（繁中版）
+        misans: [
+          'MiSansTC VF',
+          'MiSans TC',
+          'PingFang TC',
+          'Microsoft JhengHei',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       borderRadius: {
         card: 'var(--ifm-card-border-radius)',
