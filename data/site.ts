@@ -2,7 +2,7 @@ export const siteInfo = {
   name: 'Aris_QwQ',
   url: 'https://blog.tendou-aris.com',
   description: '事在人為',
-  copyrightStartYear: 2020,
+  copyrightStartYear: 2026,
   repository: 'https://github.com/ArisQwQ',
   // 備案信息：留空時頁腳不顯示備案區域；以後自己備案下來，把號填進 icp / police 即可自動顯示
   beian: {

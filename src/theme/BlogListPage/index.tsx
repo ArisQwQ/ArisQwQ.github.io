@@ -25,7 +25,7 @@ export default function BlogListPage({ metadata, items }: Props): JSX.Element {
             <header className={collection.header}>
               <div>
                 <h1 className={collection.title}>{title}</h1>
-                <p className={collection.description}><Translate id="blog.description">代碼人生：編織技術與生活的博客之旅</Translate></p>
+                <p className={collection.description}><Translate id="blog.description">編程：WA 和 TLE 之旅</Translate></p>
               </div>
               <div className={styles.headerLinks}>
                 <Link to="/blog/tags" className={collection.textLink}>
