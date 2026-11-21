@@ -90,10 +90,13 @@ const config: Config = {
       ],
     },
     giscus: {
-      repo: 'kuizuo/blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
-      category: 'General',
-      categoryId: 'DIC_kwDOF7NJDM4CPK95',
+      // 留言存放在本倉庫的 Discussions（Announcements 分類：只有維護者能開新串）
+      repo: 'ArisQwQ/ArisQwQ.github.io',
+      repoId: 'R_kgDOVtX1vQ',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOVtX1vc4DLopY',
+      // 以網址路徑對應討論串：改標題不會斷串，只有改 slug 才會
+      mapping: 'pathname',
       theme: 'light',
       darkTheme: 'dark_dimmed',
     } satisfies Partial<GiscusConfig>,
