@@ -3,8 +3,8 @@ slug: Helloworld
 title: Helloworld
 date: 2026-11-13
 authors: Aris_QwQ
-tags: [雜項]
-keywords: [雜項]
+tags: [雜文]
+keywords: [雜文]
 ---
 # Helloworld 
 Aris_QwQ 的小站上第一篇文章！
