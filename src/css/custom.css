@@ -253,6 +253,14 @@ code {
   color: var(--ifm-code-color);
 }
 
+/* 程式碼區塊的 Tab 寬度：瀏覽器預設 8，改為 4 個字元寬。
+   只影響「顯示」，原始碼裡仍然是 \t，複製出去還是製表符。 */
+pre,
+code {
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+
 div[class^='announcementBar_'] {
   background: repeating-linear-gradient(
     -35deg,
