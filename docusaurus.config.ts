@@ -3,6 +3,8 @@ import type { Config } from '@docusaurus/types'
 import { themes } from 'prism-react-renderer'
 import { siteInfo } from './data/site'
 import type { GiscusConfig } from './src/components/Comment'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 const config: Config = {
   title: 'Aris_QwQ',
@@ -177,6 +179,10 @@ const config: Config = {
           description: 'feedId:41215011978385457+userId:41840354283324416',
         //   copyright: `Copyright © ${new Date().getFullYear()} Aris_QwQ Built with Docusaurus.<p></p>`,
         },
+        // LaTeX：remark-math 解析 $...$ / $$...$$，rehype-katex 轉成 HTML
+        // throwOnError: false → 公式寫錯只顯示紅字，不會讓 build 失敗
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [[rehypeKatex, { throwOnError: false, strict: false }]],
       },
     ],
     async function tailwindcssPlugin() {
@@ -240,6 +246,11 @@ Love what you do and do what you love.
     // 套件已按 unicode-range 切成 60+ 片段，只下載頁面實際用到的字。
     // 可變字重 150–700，一條 CSS 涵蓋全部字重，缺字回退系統字體。
     'https://cdn.jsdelivr.net/npm/misans@5.0.0/lib/TC/MiSansTCVF.min.css',
+    // KaTeX 樣式：自架於 static/katex/（css + woff2/woff 字型）。
+    // 不走 CDN 是因為 jsDelivr 在部分地區連不上，CSS 一旦沒載到，
+    // MathML 與 HTML 兩份公式會同時顯示出來（看起來像公式渲染兩次）。
+    // 版本需與 rehype-katex 內建的 katex 一致（0.16.x）。
+    '/katex/katex.min.css',
   ],
   i18n: {
     defaultLocale: 'zh-TW',
